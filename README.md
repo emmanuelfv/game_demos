@@ -2,15 +2,11 @@
 
 Front end side for developed games. The main idea behind this project is to have a user frienly way to test back end development like architecture, level generators, agents, and security.
 
-## Getting Started
+## Roadmap
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+ - [ ] API Authentication
+ - [ ] Images and animations to games
+ - [ ] Animations
+ - [ ] Agents
+ - [ ] Liquid clasifier
+ - [ ] Checkers: add highlight for selected piece
