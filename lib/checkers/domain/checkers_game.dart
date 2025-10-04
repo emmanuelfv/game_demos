@@ -157,12 +157,15 @@ class CheckersGame {
       int midCol = (touchedCol + selectedCol) ~/ 2;
       int midIndex = midRow * 8 + midCol;
       grid[midIndex] = PieceState();
+      if(checkForcedMoves(piece: touchedPiece).isEmpty) {
+        selectedPiece = null;
+        ohTurn = !ohTurn;
+      }
+    } else {
+      selectedPiece = null;
+      ohTurn = !ohTurn;
     }
-
-    selectedPiece = null;
     taps++;
-    if(checkForcedMoves(piece: touchedPiece).isEmpty) ohTurn = !ohTurn;
-    
   }
 
   List<int> checkForcedMoves({int? piece}) {

@@ -1,27 +1,10 @@
-/*
 import 'package:flutter/material.dart';
+import 'package:tic_tac_toe/config/app_theme.dart';
+import 'package:tic_tac_toe/widgets-common/menu_button_widget.dart';
 import 'package:tic_tac_toe/tic-tac-toe/presentation/grid/grid_screen.dart';
-
-void main() => runApp(const MyApp());
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'tic-tac-toe',
-      debugShowCheckedModeBanner: false,
-      home: TicTacToeScreen(),
-    );
-  }
-}*/
-
-import 'package:flutter/material.dart';
+import 'package:tic_tac_toe/connect4/presentation/grid/grid_screen.dart';
 import 'package:tic_tac_toe/checkers/presentation/grid_screen.dart';
-import 'package:tic_tac_toe/tic-tac-toe/presentation/grid/grid_screen.dart';
-import 'package:tic_tac_toe/tic-tac-toe/config/app_theme.dart';
-import 'connect4/presentation/grid/grid_screen.dart';
+import 'package:tic_tac_toe/water_sort/presentation/grid_screen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -56,62 +39,45 @@ class MenuScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Padding(padding: EdgeInsets.all(20.0)),
-          Center(
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: AppTheme.appBarColor,
-              ),
-              onPressed: () {
-                Navigator.push(
-                  context, 
-                  MaterialPageRoute(builder: (context) => const TicTacToeScreen())
-                );
-              },
-              child: Text(
-                'Tic Tac Toe',
-                style: AppTheme.textStyleTitle,
-              ),
-            ),
+          MenuButton(
+            text: 'Tic Tac Toe',
+            onPressed: () {
+              Navigator.push(
+                context, 
+                MaterialPageRoute(builder: (context) => const TicTacToeScreen())
+              );
+            },
           ),
-          Padding(padding: EdgeInsets.all(20.0)),
-          Center(
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: AppTheme.appBarColor,
-              ),
-              onPressed: () {
-                Navigator.push(
-                  context, 
-                  MaterialPageRoute(builder: (context) => const Connect4Screen())
-                );
-              },
-              child: Text(
-                'Connect 4',
-                style: AppTheme.textStyleTitle,
-              ),
-            ),
+          MenuButton(
+            text: 'Connect 4',
+            onPressed: () {
+              Navigator.push(
+                context, 
+                MaterialPageRoute(builder: (context) => const Connect4Screen())
+              );
+            },
           ),
-          Padding(padding: EdgeInsets.all(20.0)),
-          Center(
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: AppTheme.appBarColor,
-              ),
-              onPressed: () {
-                Navigator.push(
-                  context, 
-                  MaterialPageRoute(builder: (context) => const CheckersScreen())
-                );
-              },
-              child: Text(
-                'Checkers',
-                style: AppTheme.textStyleTitle,
-              ),
-            ),
+          MenuButton(
+            text: 'Checkers',
+            onPressed: () {
+              Navigator.push(
+                context, 
+                MaterialPageRoute(builder: (context) => const CheckersScreen())
+              );
+            },
+          ),
+          MenuButton(
+            text: 'Water Sort',
+            onPressed: () {
+              Navigator.push(
+                context, 
+                MaterialPageRoute(builder: (context) => const WaterSortScreen())
+              );
+            },
           ),
         ],
       ),
     );
   }
 }
+

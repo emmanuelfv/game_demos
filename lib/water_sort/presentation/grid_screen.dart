@@ -1,17 +1,18 @@
+
 import 'package:flutter/material.dart';
-import 'package:tic_tac_toe/tic-tac-toe/domain/tic_tac_toe_game.dart';
+import 'package:tic_tac_toe/water_sort/domain/water_sort_game.dart';
 import 'package:tic_tac_toe/config/app_theme.dart';
 
-class TicTacToeScreen extends StatefulWidget {
-  const TicTacToeScreen({super.key});
+class WaterSortScreen extends StatefulWidget {
+  const WaterSortScreen({super.key});
 
   @override
-  State<TicTacToeScreen> createState() => TicTacToeState();
+  State<WaterSortScreen> createState() => WaterSortState();
 }
 
 
-class TicTacToeState extends State<TicTacToeScreen> {
-  final TicTacToeGame game = TicTacToeGame();
+class WaterSortState extends State<WaterSortScreen> {
+  final WaterSortGame game = WaterSortGame();
 
   @override
   Widget build(BuildContext context) {
@@ -19,10 +20,10 @@ class TicTacToeState extends State<TicTacToeScreen> {
       backgroundColor: AppTheme.scaffoldBackgroundColor,
       appBar: AppBar(
         backgroundColor: AppTheme.appBarColor,
-        title: Text('Tic-Tac-Toe', style: AppTheme.textStyleTitle),
+        title: Text('Checkers', style: AppTheme.textStyleTitle),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(30.0),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
           children: [
             Container(
@@ -41,8 +42,8 @@ class TicTacToeState extends State<TicTacToeScreen> {
             ),
             Expanded(
               child: GridView.builder(
-                itemCount: 9,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3), 
+                itemCount: 8*8,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 8), 
                 itemBuilder: (BuildContext context, int index) {
                   return GestureDetector(
                     onTap: () async {
@@ -56,7 +57,7 @@ class TicTacToeState extends State<TicTacToeScreen> {
                       ),
                       child: Center(
                         child: Text(
-                          game.grid[index], 
+                          "0",
                           style: AppTheme.textStyleSign
                         ),
                       ),
@@ -72,7 +73,7 @@ class TicTacToeState extends State<TicTacToeScreen> {
             Padding(padding: EdgeInsets.all(95.0)),
             Container(
               alignment: Alignment.center,
-              child: Text("TIC-TAC-TOE, by Emmanuel Felix", style: AppTheme.textStyleTitle),
+              child: Text("Checkers, by Emmanuel Felix", style: AppTheme.textStyleTitle),
             )
           ],
         ),
@@ -112,7 +113,6 @@ class TicTacToeState extends State<TicTacToeScreen> {
     );
   }
 
-  
 
 }
 
