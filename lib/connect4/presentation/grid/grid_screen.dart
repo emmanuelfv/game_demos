@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tic_tac_toe/connect4/domain/connect_4_game.dart';
-import 'package:tic_tac_toe/config/app_theme.dart';
+import 'package:game_demos/connect4/domain/connect_4_game.dart';
+import 'package:game_demos/config/app_theme.dart';
 
 class Connect4Screen extends StatefulWidget {
   const Connect4Screen({super.key});

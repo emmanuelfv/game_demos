@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tic_tac_toe/tic-tac-toe/presentation/grid/grid_screen.dart';
+import 'package:game_demos/tic-tac-toe/presentation/grid/grid_screen.dart';
 
 void main() => runApp(const MyApp());
 

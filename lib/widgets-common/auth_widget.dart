@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tic_tac_toe/services/auth/auth_service.dart';
-import 'package:tic_tac_toe/widgets-common/games_menu_widget.dart';
+import 'package:game_demos/services/auth/auth_service.dart';
+import 'package:game_demos/widgets-common/games_menu_widget.dart';
 
 class AuthScreen extends StatelessWidget {
   const AuthScreen({Key? key}) : super(key: key);

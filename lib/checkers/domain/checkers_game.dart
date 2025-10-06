@@ -1,4 +1,4 @@
-import 'package:tic_tac_toe/checkers/domain/Piece_state.dart';
+import 'package:game_demos/checkers/domain/Piece_state.dart';
 
 class CheckersGame {
 

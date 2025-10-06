@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tic_tac_toe/checkers/domain/checkers_game.dart';
-import 'package:tic_tac_toe/config/app_theme.dart';
+import 'package:game_demos/checkers/domain/checkers_game.dart';
+import 'package:game_demos/config/app_theme.dart';
 
 class CheckersScreen extends StatefulWidget {
   const CheckersScreen({super.key});

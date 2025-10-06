@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tic_tac_toe/config/app_theme.dart';
+import 'package:game_demos/config/app_theme.dart';
 
 class MenuButton extends StatelessWidget {
   final String text;

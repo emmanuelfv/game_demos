@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:tic_tac_toe/config/api_config.dart';
+import 'package:game_demos/config/api_config.dart';
 
 class AuthService {
   /// Creates a new user with the provided data.

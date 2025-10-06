@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tic_tac_toe/tic-tac-toe/domain/tic_tac_toe_game.dart';
-import 'package:tic_tac_toe/config/app_theme.dart';
+import 'package:game_demos/tic-tac-toe/domain/tic_tac_toe_game.dart';
+import 'package:game_demos/config/app_theme.dart';
 
 class TicTacToeScreen extends StatefulWidget {
   const TicTacToeScreen({super.key});

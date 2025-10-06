@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
-import 'package:tic_tac_toe/water_sort/domain/water_sort_game.dart';
-import 'package:tic_tac_toe/config/app_theme.dart';
+import 'package:game_demos/water_sort/domain/water_sort_game.dart';
+import 'package:game_demos/config/app_theme.dart';
 
 class WaterSortScreen extends StatefulWidget {
   const WaterSortScreen({super.key});

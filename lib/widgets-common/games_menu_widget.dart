@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:tic_tac_toe/widgets-common/menu_button_widget.dart';
-import 'package:tic_tac_toe/tic-tac-toe/presentation/grid/grid_screen.dart';
-import 'package:tic_tac_toe/connect4/presentation/grid/grid_screen.dart';
-import 'package:tic_tac_toe/checkers/presentation/grid_screen.dart';
-import 'package:tic_tac_toe/water_sort/presentation/grid_screen.dart';
+import 'package:game_demos/widgets-common/menu_button_widget.dart';
+import 'package:game_demos/tic-tac-toe/presentation/grid/grid_screen.dart';
+import 'package:game_demos/connect4/presentation/grid/grid_screen.dart';
+import 'package:game_demos/checkers/presentation/grid_screen.dart';
+import 'package:game_demos/water_sort/presentation/grid_screen.dart';
 
 
 class MenuScreen extends StatelessWidget {

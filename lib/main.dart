@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tic_tac_toe/config/app_theme.dart';
-import 'package:tic_tac_toe/widgets-common/auth_widget.dart';
+import 'package:game_demos/config/app_theme.dart';
+import 'package:game_demos/widgets-common/auth_widget.dart';
 
 void main() => runApp(const MyApp());
 
