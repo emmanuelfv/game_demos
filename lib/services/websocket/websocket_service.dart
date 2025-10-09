@@ -20,7 +20,7 @@ void onConnect(StompFrame frame) {
   // Send a message to the server
   // This could be a player's move, for example.
   stompClient.send(
-    destination: '/app/make-move',
+    destination: '/app/move',
     body: json.encode({'player': 'Player1', 'move': 'e4'}),
     headers: {},
   );
@@ -28,11 +28,16 @@ void onConnect(StompFrame frame) {
 
 final stompClient = StompClient(
   config: StompConfig(
-    url: '${ApiConfig.baseUrl}/${ApiConfig.websocketEndpoint}',
+    url: ApiConfig.wsUrl,
     onConnect: onConnect,
+    beforeConnect: () async {
+      print('waiting to connect...');
+      await Future.delayed(const Duration(milliseconds: 200));
+      print('connecting...');
+    },
     onWebSocketError: (dynamic error) => print(error.toString()),
-    stompConnectHeaders: {'Authorization': '${ApiConfig.token}'}, // If you have auth
-    webSocketConnectHeaders: {'Authorization': '${ApiConfig.token}'}, // If you have auth
+    stompConnectHeaders: {'Authorization': 'Bearer yourToken'},
+    webSocketConnectHeaders: {'Authorization': 'Bearer your2Token'}, // If you have auth
   ),
 );
 

@@ -18,17 +18,11 @@ class AuthScreen extends StatelessWidget {
             ElevatedButton(
               child: const Text('Register'),
               onPressed: () async {
-                // Await result from RegisterScreen
-                final result = await Navigator.of(context).push(
+                await Navigator.of(context).push(
                   MaterialPageRoute(builder: (context) => const RegisterScreen()),
                 );
-                if (result == true) {
-                  Navigator.push(
-                    context, 
-                    MaterialPageRoute(builder: (context) => const MenuScreen())
-                  );
-                }
-              },            ),
+              },
+            ),
             const SizedBox(height: 20),
             ElevatedButton(
               child: const Text('Login'),
@@ -43,6 +37,16 @@ class AuthScreen extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => const MenuScreen())
                   );
                 }
+              },
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              child: const Text('Skip Login'),
+              onPressed: () {
+                Navigator.push(
+                  context, 
+                  MaterialPageRoute(builder: (context) => const MenuScreen())
+                );
               },
             ),
           ],

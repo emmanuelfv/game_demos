@@ -31,7 +31,7 @@ class Connect4MenuScreen extends StatelessWidget {
             },
           ),
           MenuButton(
-            text: 'Connect 4 one player',
+            text: 'Connect 4 1P',
             onPressed: () {
               Navigator.push(
                 context, 
