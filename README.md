@@ -4,7 +4,7 @@ Front end side for developed games. The main idea behind this project is to have
 
 ## Roadmap
 
- - [ ] API Authentication
+ - [x] API Authentication
  - [ ] Images and animations to games
  - [ ] Animations
  - [ ] Agents
