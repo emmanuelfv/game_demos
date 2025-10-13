@@ -11,7 +11,7 @@ class Connect4MenuScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Tic Tac Toe Menu'),
+        title: const Text('connect 4 Menu'),
       ),
       body: Column(
         children: [

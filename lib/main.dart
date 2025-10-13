@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'tic-tac-toe',
+      title: 'game_demos',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         scaffoldBackgroundColor: AppTheme.scaffoldBackgroundColor,
@@ -23,4 +23,5 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+ 
  
