@@ -58,6 +58,7 @@ class AuthService {
     
     if (response.statusCode == 200) {
       ApiConfig.token = jsonDecode(response.body)["token"];
+      ApiConfig.user = credentials['user'];
       return ApiConfig.token;
     } else {
       throw Exception('Failed to login: ${response.statusCode}');

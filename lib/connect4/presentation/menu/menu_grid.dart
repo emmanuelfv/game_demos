@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:game_demos/widgets-common/menu_button_widget.dart';
 import 'package:game_demos/connect4/presentation/grid/grid_screen.dart';
-import 'package:game_demos/services/websocket/websocket_service.dart';
+import 'package:game_demos/connect4/presentation/menu/game_menu_1.dart';
+import 'package:game_demos/services/websocket/websocket_service.dart';  // TODO: remove this line
+
 
 
 class Connect4MenuScreen extends StatelessWidget {
@@ -27,7 +29,12 @@ class Connect4MenuScreen extends StatelessWidget {
           MenuButton(
             text: 'Connect 4 online',
             onPressed: () {
-              stompClient.activate();
+              stompClient.activate(); // TODO: remove this line
+
+              /*Navigator.push(
+                context, 
+                MaterialPageRoute(builder: (context) => const GameScreen(gameType: "connect4"))
+              );*/
             },
           ),
           MenuButton(
