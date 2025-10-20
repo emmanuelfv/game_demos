@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:stomp_dart_client/stomp_dart_client.dart';
 import 'package:game_demos/config/api_config.dart';
@@ -30,6 +31,14 @@ String? _gameId;
 String? playerId;
 String? turn;
 //final _gameStateController = StreamController<Map<String, dynamic>>.broadcast();
+
+final stompClient = StompClient(
+  config: StompConfig(
+    url: 'ws://192.168.50.151:8080/ws_game',
+    onConnect: onConnect,
+    onWebSocketError: (dynamic error) => print(error.toString()),
+  ),
+);
 
 void onConnect(StompFrame frame) {
   // Both users subscribe to the /join topic to get the gameId
@@ -68,7 +77,7 @@ void onConnect(StompFrame frame) {
     },
   );
 
-  joinGame("connect4");
+  joinGame("connect4"); // TODO: remove this line
 }
 
 void _subscribeToGameChannel(String gameId) {
@@ -81,20 +90,26 @@ void _subscribeToGameChannel(String gameId) {
         print('Received game message: $gameState');
         //onGameStart?.call(gameState);
         //_gameStateController.add(gameState);
+
+        if(gameState['endGame'] != '_') {
+          print('Game ended: ${gameState['endGame']}');
+        }
+        if(gameState['turn'] != turn) {
+          turn = gameState['turn'];
+          print('Turn changed to: $turn');
+        }
+        if(turn == (playerId == 'p1' ? 'x' : 'o')) {
+          print('It is now your turn, player $playerId');
+          makeMove('3'); 
+         }
+
+        
       }
     },
   );
+
+  makeMove('3'); // TODO: remove this line
 }
-
-final stompClient = StompClient(
-  config: StompConfig(
-    url: 'ws://192.168.50.151:8080/ws_game',
-    onConnect: onConnect,
-    onWebSocketError: (dynamic error) => print(error.toString()),
-  ),
-);
-
-
 
 void joinGame(String gameType) {
   Map<String, String> joinGameRequest = {
@@ -102,14 +117,31 @@ void joinGame(String gameType) {
     'token': ApiConfig.token,
     'gameType': gameType
   };
-  print(  'Joining game with request: $joinGameRequest');
+  print('Joining game with request: $joinGameRequest');
   stompClient.send(
     destination: '/game_frontend/join',
     body: json.encode(joinGameRequest),
   );
 }
 
+void makeMove(String move) { // Use your actual GameMove object
+  if (_gameId == null) {
+    print('Error: Cannot make a move without a gameId.');
+    return;
+  }
 
+  Map<String, String> makeMoveRequest = {
+    'gameId': _gameId!,
+    'playerId': playerId!,
+    'token': ApiConfig.token,
+    'value': move,
+  };
+  print('Making move with request: $makeMoveRequest');
+  stompClient.send(
+    destination: '/game_frontend/move/$_gameId',
+    body: json.encode(makeMoveRequest), // Assumes your move object can be JSON encoded
+  );
+}
 
 
 
